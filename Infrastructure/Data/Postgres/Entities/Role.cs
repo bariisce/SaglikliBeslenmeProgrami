@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Postgres.Entities
 {
-    public class MealCategories : Entity<int>
+    public class Role : Entity<int>
     {
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
+        public string RoleName { get; set; }
 
+        public ICollection<User> Users { get; set; }
     }
 }

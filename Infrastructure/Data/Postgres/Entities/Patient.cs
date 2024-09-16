@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public string Medications { get; set; }
 
 
-        public Users Users { get; set; }
+        public User Users { get; set; }
         public ICollection<HealthRecord> HealthRecords { get; set; }
         public ICollection<PatientAllergy> PatientAllergies { get; set; }
         public ICollection<DietitianPatient> DietitianPatients { get; set; }

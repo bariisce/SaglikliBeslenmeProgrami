@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Postgres.Entities
 {
-    public class Users : Entity<int>
+    public class User : Entity<int>
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -22,7 +22,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public int RoleId { get; set; }
 
 
-        public Roles Roles { get; set; }
+        public Role Roles { get; set; }
         public ICollection<Patient> Patients { get; set; }
 
 
