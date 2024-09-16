@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Response\" />
+    <Folder Include="Models\Request\Create\" />
+    <Folder Include="Models\Request\Functional\" />
+    <Folder Include="Models\Request\Update\" />
+    <Folder Include="Services\" />
+    <Folder Include="Utilities\Helpers\" />
+    <Folder Include="Utilities\Hubs\" />
+    <Folder Include="Utilities\Mapping\" />
+    <Folder Include="Utilities\Validation\" />
+    <Folder Include="Utilities\Security\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+  </ItemGroup>
+
 </Project>
