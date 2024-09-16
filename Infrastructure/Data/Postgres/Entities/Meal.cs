@@ -15,7 +15,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public decimal Calory { get; set; }
 
 
-        public MealCategories Category { get; set; }
+        public MealCategory Category { get; set; }
         public ICollection<DietPlanMeal> DietPlanMeals { get; set; }
 
     }
