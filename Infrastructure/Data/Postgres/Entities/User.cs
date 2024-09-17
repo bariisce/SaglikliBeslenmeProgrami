@@ -9,21 +9,20 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class User : Entity<int>
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
-        public int Age { get; set; }
+        public string Name { get; set; }                   = default!;
+        public string Surname { get; set; }                = default!;
+        public string Email { get; set; }                  = default!;
+        public string PhoneNumber { get; set; }            = default!;
+        public string Username { get; set; }               = default!;
+        public string Password { get; set; }               = default!;
+        public DateTime BirthDate { get; set; }            = default!;
+        public string Gender { get; set; }                 = default!;
+        public int Age { get; set; }                       = default!;
+        public int RoleId { get; set; }                    = default!;
 
-        public int RoleId { get; set; }
 
-
-        public Role Roles { get; set; }
-        public ICollection<Patient> Patients { get; set; }
+        public Role Roles { get; set; }                    = default!;
+        public ICollection<Patient> Patients { get; set; } = default!;
 
 
     }

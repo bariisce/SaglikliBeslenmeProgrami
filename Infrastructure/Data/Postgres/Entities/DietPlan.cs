@@ -9,15 +9,15 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class DietPlan : Entity<int>
     {
-        public int DietitianId { get; set; }
-        public int PatientId { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public int CaloriesPerDay { get; set; }
-        public string Details { get; set; }
-
-        public Dietitian Dietitian { get; set; }
-        public Patient Patient { get; set; }
-        public ICollection<DietPlanMeal> DietPlanMeals { get; set; }
+        public int DietitianId { get; set; }                            = default!;
+        public int PatientId { get; set; }                              = default!;
+        public DateTime StartDate { get; set; }                         = default!;
+        public DateTime EndDate { get; set; }                           = default!;
+        public int CaloriesPerDay { get; set; }                         = default!;
+        public string Details { get; set; }                             = default!;
+                                                                        
+        public Dietitian Dietitian { get; set; }                        = default!;
+        public Patient Patient { get; set; }                            = default!;
+        public ICollection<DietPlanMeal> DietPlanMeals { get; set; } = default!;
     }
 }

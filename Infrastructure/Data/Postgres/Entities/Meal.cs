@@ -9,14 +9,14 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Meal : Entity<int>
     {
-        public int CategoryId { get; set; }
-        public string MealName { get; set; }
-        public string Description { get; set; }
-        public decimal Calory { get; set; }
-
-
-        public MealCategory Category { get; set; }
-        public ICollection<DietPlanMeal> DietPlanMeals { get; set; }
+        public int CategoryId { get; set; }                          = default!;
+        public string MealName { get; set; }                         = default!;
+        public string Description { get; set; }                      = default!;
+        public decimal Calory { get; set; }                          = default!;
+                                                                     
+                                                                    
+        public MealCategory Category { get; set; }                   = default!;
+        public ICollection<DietPlanMeal> DietPlanMeals { get; set; } = default!;
 
     }
 }

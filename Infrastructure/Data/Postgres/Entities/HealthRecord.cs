@@ -9,13 +9,13 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class HealthRecord : Entity<int>
     {
-        public int PatientId { get; set; }
-        public decimal BloodPressure { get; set; }
-        public decimal HeartRate { get; set; }
-        public decimal Cholesterol { get; set; }
-        public decimal BloodSugar { get; set; }
-        public DateTime RecordedDate { get; set; }
-        
-        public Patient Patient { get; set; }
+        public int PatientId { get; set; }          = default!;
+        public decimal BloodPressure { get; set; }  = default!;
+        public decimal HeartRate { get; set; }      = default!;
+        public decimal Cholesterol { get; set; }    = default!;
+        public decimal BloodSugar { get; set; }     = default!;
+        public DateTime RecordedDate { get; set; }  = default!;
+
+        public Patient Patient { get; set; } = default!;
     }
 }
