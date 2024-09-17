@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaglikliBeslenmeProgrami", "SaglikliBeslenmeProgrami\SaglikliBeslenmeProgrami.csproj", "{F677E5CE-0831-4AA1-9CF9-78AE4B23A78F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "SaglikliBeslenmeProgrami\Web.csproj", "{F677E5CE-0831-4AA1-9CF9-78AE4B23A78F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{0C0BBE25-054C-4B22-9F8F-89B356D5777E}"
 EndProject
