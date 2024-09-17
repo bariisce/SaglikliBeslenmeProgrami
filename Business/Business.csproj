@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Response\" />
     <Folder Include="Models\Request\Functional\" />
     <Folder Include="Services\" />
     <Folder Include="Utilities\Helpers\" />
