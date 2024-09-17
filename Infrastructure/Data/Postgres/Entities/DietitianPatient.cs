@@ -9,12 +9,12 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class DietitianPatient : Entity<int>
     {
-        public int DietitianId { get; set; }
-        public int PatientId { get; set; }
-        public int DietPlanId { get; set; }
-
-        public Dietitian Dietitian { get; set; }
-        public Patient Patient { get; set; }
-        public DietPlan DietPlan { get; set; }
+        public int DietitianId { get; set; }      = default!;
+        public int PatientId { get; set; }        = default!;
+        public int DietPlanId { get; set; }       = default!;
+                                                
+        public Dietitian Dietitian { get; set; }  = default!;
+        public Patient Patient { get; set; }      = default!;
+        public DietPlan DietPlan { get; set; } = default!;
     }
 }

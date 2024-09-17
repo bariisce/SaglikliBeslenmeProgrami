@@ -9,12 +9,12 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class Dietitian : Entity<int>
     {
-        public int UserId { get; set; }
-        public string LicenseNumber { get; set; }
-        public string Specialization {  get; set; }
+        public int UserId { get; set; }             = default!;
+        public string LicenseNumber { get; set; }   = default!;
+        public string Specialization { get; set; } = default!;
 
-        public User Users { get; set; }
-        public ICollection<DietitianPatient> DietitianPatients { get; set; }
-        public ICollection<DietPlan> DietPlans { get; set; }
+        public User Users { get; set; } = default!;
+        public ICollection<DietitianPatient> DietitianPatients { get; set; } = default!;
+        public ICollection<DietPlan> DietPlans { get; set; } = default!;
     }
 }

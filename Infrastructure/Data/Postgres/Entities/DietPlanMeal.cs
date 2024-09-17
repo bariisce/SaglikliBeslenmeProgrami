@@ -9,11 +9,11 @@ namespace Infrastructure.Data.Postgres.Entities
 {
     public class DietPlanMeal : Entity<int>
     {
-        public int DietPlanId { get; set; }
-        public int MealId { get; set; }
-        public float ServingSize { get; set; }
-
-        public DietPlan DietPlan { get; set; }
-        public Meal Meal { get; set; }
+        public int DietPlanId { get; set; }    = default!;
+        public int MealId { get; set; }        = default!;
+        public float ServingSize { get; set; } = default!;
+                                               
+        public DietPlan DietPlan { get; set; } = default!;
+        public Meal Meal { get; set; } = default!;
     }
 }
