@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Postgres\Migrations\" />
-    <Folder Include="Data\Postgres\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
