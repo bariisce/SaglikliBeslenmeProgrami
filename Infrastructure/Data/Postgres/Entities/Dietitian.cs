@@ -10,7 +10,6 @@ namespace Infrastructure.Data.Postgres.Entities
     public class Dietitian : Entity<int>
     {
         public int UserId { get; set; }             = default!;
-        public string LicenseNumber { get; set; }   = default!;
         public string Specialization { get; set; } = default!;
 
         public User Users { get; set; } = default!;
