@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Create
 {
-    public class MealUpdateDTO
+    public class MealCreateDTO
     {
         public int CategoryId { get; set; } = default!;
         public string MealName { get; set; } = default!;

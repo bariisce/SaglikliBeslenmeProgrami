@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Create
 {
-    public class PatientUpdateDTO
+    public class PatientCreateDTO
     {
         public int UserId { get; set; } = default!;
         public float Weight { get; set; } = default!;

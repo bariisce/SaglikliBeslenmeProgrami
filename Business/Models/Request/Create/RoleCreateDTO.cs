@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Create
 {
-    public class RoleUpdateDTO
+    public class RoleCreateDTO
     {
         public string RoleName { get; set; } = default!;
 
