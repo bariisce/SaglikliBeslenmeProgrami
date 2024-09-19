@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Models.Request.Create
 {
-    public class UserUpdateDTO
+    public class UserCreateDTO
     {
         public string Name { get; set; } = default!;
         public string Surname { get; set; } = default!;
