@@ -35,6 +35,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework
             modelBuilder.ApplyConfiguration(new PatientConfiguration());
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
