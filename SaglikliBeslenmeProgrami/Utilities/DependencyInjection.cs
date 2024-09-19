@@ -1,4 +1,7 @@
 ﻿
+using Business.Services.Interface;
+using Infrastructure.Data.Postgres;
+
 namespace Web.Utilities
 {
     public static class DependencyInjection
@@ -18,6 +21,7 @@ namespace Web.Utilities
             serviceCollection.AddScoped<IPatientService, PatientService>();
             serviceCollection.AddScoped<IRoleService, RoleService>();
             serviceCollection.AddScoped<IUserService, UserService>();
+            serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         public static void AddMySingleton(this IServiceCollection serviceCollection)
