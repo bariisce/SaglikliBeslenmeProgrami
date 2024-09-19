@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class UserService : BaseService<User, int, UserResponseDto>, IUserService
     {
         public UserService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.UserRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Users, mapperHelper)
         {
 
         }

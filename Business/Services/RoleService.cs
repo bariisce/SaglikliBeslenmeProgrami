@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class RoleService : BaseService<Role, int, RoleResponseDto>, IRoleService
     {
         public RoleService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.RoleRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Roles, mapperHelper)
         {
 
         }

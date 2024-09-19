@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class MealCategoryService : BaseService<MealCategory, int, MealCategoryResponseDto>, IMealCategoryService
     {
         public MealCategoryService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.MealCategoryRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.MealCategories, mapperHelper)
         {
 
         }

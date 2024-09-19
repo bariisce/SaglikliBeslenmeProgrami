@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class HealthRecordService : BaseService<HealthRecord, int, HealthRecordResponseDto>, IHealthRecordService
     {
         public HealthRecordService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.HealthRecordRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.HealthRecords, mapperHelper)
         {
 
         }

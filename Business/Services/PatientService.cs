@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class PatientService : BaseService<Patient, int, PatientResponseDto>, IPatientService
     {
         public PatientService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.PatientRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Patients, mapperHelper)
         {
 
         }

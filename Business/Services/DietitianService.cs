@@ -10,7 +10,7 @@ namespace Business.Services
     public abstract class DietitianService : BaseService<Dietitian, int, DietitianResponseDto>,IDietitianService
     {
         public DietitianService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.DietitianRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Dietitians, mapperHelper)
         {
 
         }

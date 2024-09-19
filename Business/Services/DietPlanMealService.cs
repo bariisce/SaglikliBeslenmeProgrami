@@ -15,7 +15,7 @@ namespace Business.Services
     public abstract class DietPlanMealService : BaseService<DietPlanMeal, int, DietPlanMealResponseDto>,IDietPlanMealService
     {
         public DietPlanMealService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.DietPlanMealRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.DietPlanMeals, mapperHelper)
         {
 
         }

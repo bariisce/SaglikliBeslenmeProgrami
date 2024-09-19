@@ -16,7 +16,7 @@ namespace Business.Services
     public class AllergyService : BaseService<Allergy, int, AllergyResponseDto>,IAllergyService
     {
         public AllergyService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) 
-            : base(unitOfWork, unitOfWork.AllergyRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Allergies, mapperHelper)
         {
 
         }
