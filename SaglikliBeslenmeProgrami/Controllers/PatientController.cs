@@ -8,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class PatientController : BaseCRUDController<Patient, int, PatientCreateDTO, PatientUpdateDTO, PatientResponseDTO>
+    public class PatientController : BaseCRUDController<Patient, int, PatientCreateDto, PatientUpdateDto, PatientResponseDto>
     {
         public PatientController(IPatientService service) : base(service)
         {

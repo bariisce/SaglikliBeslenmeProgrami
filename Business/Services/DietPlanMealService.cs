@@ -7,10 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Services.Base;
+using Business.Utilities.Mapping.Interfaces;
 
-namespace Business.Services.Base
+namespace Business.Services
 {
-    public abstract class DietPlanMealService : BaseService<DietPlanMeal, int, DietPlanMealResponseDTO>,IDietPlanMealService
+    public abstract class DietPlanMealService : BaseService<DietPlanMeal, int, DietPlanMealResponseDto>,IDietPlanMealService
     {
         public DietPlanMealService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.DietPlanMealRepository, mapperHelper)

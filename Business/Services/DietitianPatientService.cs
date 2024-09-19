@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Utilities.Mapping.Interfaces;
 
 namespace Business.Services
 {
-    public abstract class DietitianPatientService : BaseService<DietitianPatient, int, DietitianPatientResponseDTO>, IDietitianPatientService
+    public abstract class DietitianPatientService : BaseService<DietitianPatient, int, DietitianPatientResponseDto>, IDietitianPatientService
     {
         public DietitianPatientService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.DietitianPatientRepository, mapperHelper)

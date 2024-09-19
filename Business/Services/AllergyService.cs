@@ -6,10 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Services.Base;
+using Business.Utilities.Mapping.Interfaces;
+using Infrastructure.Data.Postgres;
 
-namespace Business.Services.Base
+namespace Business.Services
 {
-    public class AllergyService : BaseService<Allergy, int, AllergyResponseDTO>,IAllergyService
+    public class AllergyService : BaseService<Allergy, int, AllergyResponseDto>,IAllergyService
     {
         public AllergyService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper) 
             : base(unitOfWork, unitOfWork.AllergyRepository, mapperHelper)

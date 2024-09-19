@@ -7,10 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Services.Base;
+using Business.Utilities.Mapping.Interfaces;
 
-namespace Business.Services.Base
+namespace Business.Services
 {
-    public abstract class PatientService : BaseService<Patient, int, PatientResponseDTO>, IPatientService
+    public abstract class PatientService : BaseService<Patient, int, PatientResponseDto>, IPatientService
     {
         public PatientService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.PatientRepository, mapperHelper)

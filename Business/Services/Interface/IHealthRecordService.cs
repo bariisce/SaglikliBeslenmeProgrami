@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Services.Interface
 {
-    public interface IHealthRecordService : IBaseService<HealthRecord, int, HealthRecordResponseDTO>
+    public interface IHealthRecordService : IBaseService<HealthRecord, int, HealthRecordResponseDto>
     {
     }
 }
