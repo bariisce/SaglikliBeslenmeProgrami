@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Services.Base;
-using Business.Utilities.Mapping.Interfaces;
+using Business.Utilities.Mapping.Interface;
 
 namespace Business.Services
 {

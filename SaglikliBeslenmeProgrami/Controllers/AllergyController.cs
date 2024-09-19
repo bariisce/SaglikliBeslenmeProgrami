@@ -8,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class AllergyController : BaseCRUDController<Allergy, int, AllergyCreateDto, AllergyUpdateDto, AllergyResponseDto>
+    public class AllergyController : BaseCrudController<Allergy, int, AllergyCreateDto, AllergyUpdateDto, AllergyResponseDto>
     {
         public AllergyController(IAllergyService service) : base(service)
         {

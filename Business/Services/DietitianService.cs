@@ -1,7 +1,7 @@
 ﻿using Business.Models.Response;
 using Business.Services.Base;
 using Business.Services.Interface;
-using Business.Utilities.Mapping.Interfaces;
+using Business.Utilities.Mapping.Interface;
 using Infrastructure.Data.Postgres;
 using Infrastructure.Data.Postgres.Entities;
 

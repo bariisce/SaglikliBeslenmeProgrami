@@ -8,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class DietPlanMealController : BaseCRUDController<DietPlanMeal, int, DietPlanMealCreateDto, DietPlanMealUpdateDto, DietPlanMealResponseDto>
+    public class DietPlanMealController : BaseCrudController<DietPlanMeal, int, DietPlanMealCreateDto, DietPlanMealUpdateDto, DietPlanMealResponseDto>
     {
         public DietPlanMealController(IDietPlanMealService service) : base(service)
         {

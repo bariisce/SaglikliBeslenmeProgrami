@@ -1,5 +1,5 @@
 ﻿using Business.Services.Base.Interface;
-using Business.Utilities.Mapping.Interfaces;
+using Business.Utilities.Mapping.Interface;
 using Core.Results;
 using Infrastructure.Data.Postgres;
 using Infrastructure.Data.Postgres.Repositories.Base.Interface;
@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Constants;
 
 namespace Business.Services.Base
 {
