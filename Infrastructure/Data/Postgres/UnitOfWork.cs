@@ -1,5 +1,4 @@
-﻿using Core.Utilities;
-using Infrastructure.Data.Postgres.Entities;
+﻿using Infrastructure.Data.Postgres.Entities;
 using Infrastructure.Data.Postgres.Entities.Base.Interface;
 using Infrastructure.Data.Postgres.EntityFramework;
 using Infrastructure.Data.Postgres.Repositories;
@@ -28,31 +27,31 @@ public class UnitOfWork : IUnitOfWork
     private RoleRepository? _roleRepository;
     private UserRepository? _userRepository;
     
-    public IAllergyRepository AllergyRepository => _allergyRepository ??=
+    public IAllergyRepository Allergies => _allergyRepository ??=
         new AllergyRepository(_postgresContext);
-    public IDietitianPatientRepository DietitianPatientRepository => _dietitianPatientRepository ??=
+    public IDietitianPatientRepository DietitianPatients => _dietitianPatientRepository ??=
         new DietitianPatientRepository(_postgresContext);
-    public IDietitianRepository DietitianRepository => _dietitianRepository ??=
+    public IDietitianRepository Dietitians => _dietitianRepository ??=
         new DietitianRepository(_postgresContext);
-    public IDietPlanMealRepository DietPlanMealRepository => _dietPlanMealRepository ??=
+    public IDietPlanMealRepository DietPlanMeals => _dietPlanMealRepository ??=
         new DietPlanMealRepository(_postgresContext);
-    public IDietPlanRepository DietPlanRepository => _dietPlanRepository ??=
+    public IDietPlanRepository DietPlans => _dietPlanRepository ??=
         new DietPlanRepository(_postgresContext);
-    public IHealthRecordRepository HealthRecordRepository => _healthRecordRepository ??=
+    public IHealthRecordRepository HealthRecords => _healthRecordRepository ??=
         new HealthRecordRepository(_postgresContext);
-    public IMealCategoryRepository MealCategoryRepository => _mealCategoryRepository ??=
+    public IMealCategoryRepository MealCategories => _mealCategoryRepository ??=
         new MealCategoryRepository(_postgresContext);
-    public IMealRecipeRepository MealRecipeRepository => _mealRecipeRepository ??=
+    public IMealRecipeRepository MealRecipes => _mealRecipeRepository ??=
         new MealRecipeRepository(_postgresContext);
-    public IMealRepository MealRepository => _mealRepository ??=
+    public IMealRepository Meals => _mealRepository ??=
         new MealRepository(_postgresContext);
-    public IPatientAllergyRepository PatientAllergyRepository => _patientAllergyRepository ??=
+    public IPatientAllergyRepository PatientAllergies => _patientAllergyRepository ??=
         new PatientAllergyRepository(_postgresContext);
-    public IPatientRepository PatientRepository => _patientRepository ??=
+    public IPatientRepository Patients => _patientRepository ??=
         new PatientRepository(_postgresContext);
-    public IRoleRepository RoleRepository => _roleRepository ??=
+    public IRoleRepository Roles => _roleRepository ??=
         new RoleRepository(_postgresContext);
-    public IUserRepository UserRepository => _userRepository ??=
+    public IUserRepository Users => _userRepository ??=
         new UserRepository(_postgresContext);
     
     public async Task<int> CommitAsync()
@@ -62,7 +61,7 @@ public class UnitOfWork : IUnitOfWork
             .Select(e => e.Entity);
         foreach (var updatedEntity in updatedEntities)
         {
-            updatedEntity.UpdatedAt = DateTime.UtcNow.ToTimeZone();
+            updatedEntity.UpdatedAt = DateTime.UtcNow.ToLocalTime();
         }
         var result = await _postgresContext.SaveChangesAsync();
         
