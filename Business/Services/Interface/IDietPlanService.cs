@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Services.Interface
 {
-    public interface IDietPlanService : IBaseService<DietPlan, int, DietPlanResponseDTO>
+    public interface IDietPlanService : IBaseService<DietPlan, int, DietPlanResponseDto>
     {
     }
 }

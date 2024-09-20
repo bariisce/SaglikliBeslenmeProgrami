@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
-using SaglikliBeslenmeProgrami.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Web.Models;
 
-namespace SaglikliBeslenmeProgrami.Controllers
+namespace Web.Controllers
 {
     public class HomeController : Controller
     {

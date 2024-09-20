@@ -1,4 +1,5 @@
 ﻿using Business.Models.Request.Create;
+using Business.Models.Request.Update;
 using Business.Models.Response;
 using Business.Services.Interface;
 using Infrastructure.Data.Postgres.Entities;
@@ -7,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class DietitianController : BaseCRUDController<Dietitian, int, DietitianCreateDTO, DietitianUpdateDTO, DietitianResponseDTO>
+    public class DietitianController : BaseCrudController<Dietitian, int, DietitianCreateDto, DietitianUpdateDto, DietitianResponseDto>
     {
         public DietitianController(IDietitianService service) : base(service)
         {

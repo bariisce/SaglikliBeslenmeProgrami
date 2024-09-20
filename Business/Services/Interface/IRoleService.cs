@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Services.Interface
 {
-    public interface IRoleService : IBaseService<Role, int, RoleResponseDTO>
+    public interface IRoleService : IBaseService<Role, int, RoleResponseDto>
     {
     }
 }

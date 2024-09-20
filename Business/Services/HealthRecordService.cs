@@ -7,13 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Services.Base;
+using Business.Utilities.Mapping.Interface;
 
-namespace Business.Services.Base
+namespace Business.Services
 {
-    public abstract class HealthRecordService : BaseService<HealthRecord, int, HealthRecordResponseDTO>, IHealthRecordService
+    public abstract class HealthRecordService : BaseService<HealthRecord, int, HealthRecordResponseDto>, IHealthRecordService
     {
         public HealthRecordService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.HealthRecordRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.HealthRecords, mapperHelper)
         {
 
         }

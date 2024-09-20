@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business.Services.Interface
 {
-    public interface IAllergyService : IBaseService<Allergy, int, AllergyResponseDTO>
+    public interface IAllergyService : IBaseService<Allergy, int, AllergyResponseDto>
     {
 
     }

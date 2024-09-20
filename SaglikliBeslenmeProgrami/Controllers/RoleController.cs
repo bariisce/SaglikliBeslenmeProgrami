@@ -8,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class RoleController : BaseCRUDController<Role, int, RoleCreateDTO, RoleUpdateDTO, RoleResponseDTO>
+    public class RoleController : BaseCrudController<Role, int, RoleCreateDto, RoleUpdateDto, RoleResponseDto>
     {
         public RoleController(IRoleService service) : base(service)
         {

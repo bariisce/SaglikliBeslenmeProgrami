@@ -8,7 +8,7 @@ using Web.Controllers.Base;
 
 namespace Web.Controllers
 {
-    public class UserController : BaseCRUDController<User, int, UserCreateDTO, UserUpdateDTO, UserResponseDTO>
+    public class UserController : BaseCrudController<User, int, UserCreateDto, UserUpdateDto, UserResponseDto>
     {
         public UserController(IUserService service) : base(service)
         {

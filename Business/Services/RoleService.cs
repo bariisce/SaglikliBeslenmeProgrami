@@ -7,13 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Services.Base;
+using Business.Utilities.Mapping.Interface;
 
-namespace Business.Services.Base
+namespace Business.Services
 {
-    public abstract class RoleService : BaseService<Role, int, RoleResponseDTO>, IRoleService
+    public abstract class RoleService : BaseService<Role, int, RoleResponseDto>, IRoleService
     {
         public RoleService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
-            : base(unitOfWork, unitOfWork.RoleRepository, mapperHelper)
+            : base(unitOfWork, unitOfWork.Roles, mapperHelper)
         {
 
         }
