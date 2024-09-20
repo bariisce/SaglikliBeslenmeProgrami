@@ -12,7 +12,7 @@ using Business.Utilities.Mapping.Interface;
 
 namespace Business.Services
 {
-    public abstract class DietPlanMealService : BaseService<DietPlanMeal, int, DietPlanMealResponseDto>,IDietPlanMealService
+    public class DietPlanMealService : BaseService<DietPlanMeal, int, DietPlanMealResponseDto>,IDietPlanMealService
     {
         public DietPlanMealService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.DietPlanMeals, mapperHelper)

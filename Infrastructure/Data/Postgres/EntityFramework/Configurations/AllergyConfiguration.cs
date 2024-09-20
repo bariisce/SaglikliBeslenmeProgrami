@@ -17,7 +17,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             var data = new Allergy[]
             {
-                new Allergy{Id=1, AllergyName="İlaç Alerjisi", Description="Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",  CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false},
+                new Allergy{Id=1, AllergyName="İlaç Alerjisi", Description="Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",  CreatedAt=DateTime.UtcNow.Date, IsDeleted=false},
             };
             builder.HasData(data);
         }

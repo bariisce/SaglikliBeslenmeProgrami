@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new HealthRecord[]
             {
-                new HealthRecord{Id=1, PatientId=1, BloodPressure=120, BloodSugar= 150, Cholesterol=239, HeartRate=90, RecordedDate=new DateTime(2024,18,09), CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false}
+                new HealthRecord{Id=1, PatientId=1, BloodPressure=120, BloodSugar= 150, Cholesterol=239, HeartRate=90, RecordedDate=new DateTime(2024,09,18), CreatedAt=DateTime.UtcNow.Date, IsDeleted=false}
             };
             builder.HasData(data);
         }

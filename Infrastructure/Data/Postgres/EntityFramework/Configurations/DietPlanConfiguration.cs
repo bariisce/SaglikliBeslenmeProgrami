@@ -24,7 +24,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     StartDate = new DateTime(2024, 11, 11), EndDate = new DateTime(2025, 10, 10),
                     CaloriesPerDay = 200,
                     Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
-                    CreatedAt = DateTime.UtcNow.ToLocalTime(), IsDeleted = false
+                    CreatedAt = DateTime.UtcNow.Date, IsDeleted = false
                 }
             };
             builder.HasData(data);

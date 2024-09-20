@@ -7,7 +7,7 @@ using Infrastructure.Data.Postgres.Entities;
 
 namespace Business.Services
 {
-    public abstract class DietitianService : BaseService<Dietitian, int, DietitianResponseDto>,IDietitianService
+    public class DietitianService : BaseService<Dietitian, int, DietitianResponseDto>,IDietitianService
     {
         public DietitianService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.Dietitians, mapperHelper)

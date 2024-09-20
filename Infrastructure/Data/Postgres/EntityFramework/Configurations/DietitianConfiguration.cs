@@ -21,7 +21,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Id=1, 
                     Specialization="Diyabet Diyetisyeni", 
                     UserId=1, 
-                    CreatedAt=DateTime.UtcNow.ToLocalTime(), 
+                    CreatedAt=DateTime.UtcNow.Date, 
                     IsDeleted=false}
             };
             builder.HasData(data);

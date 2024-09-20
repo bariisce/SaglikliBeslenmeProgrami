@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new MealRecipe[]
             {
-                new MealRecipe{Id=1, MealId=1, DietPlanId=1, Ingredients="Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", Instructions="Yemeği Yapma Adımları", CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false}
+                new MealRecipe{Id=1, MealId=1, DietPlanId=1, Ingredients="Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", Instructions="Yemeği Yapma Adımları", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false}
             };
             builder.HasData(data);
         }

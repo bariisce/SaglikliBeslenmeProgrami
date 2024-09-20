@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new DietitianPatient[]
             {
-                new DietitianPatient{Id=1, DietitianId=1, PatientId=1, DietPlanId=1, CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false},
+                new DietitianPatient{Id=1, DietitianId=1, PatientId=1, DietPlanId=1, CreatedAt=DateTime.UtcNow.Date, IsDeleted=false},
             };
             builder.HasData(data);
         }

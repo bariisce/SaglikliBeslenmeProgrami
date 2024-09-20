@@ -29,7 +29,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Password="baris.C123",
                     PhoneNumber="05305137988",
                     Username="barisscl",
-                    CreatedAt=DateTime.UtcNow.ToLocalTime(),
+                    CreatedAt=DateTime.UtcNow.Date,
                     IsDeleted=false
                 },
                 new User
@@ -45,7 +45,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Password="hakan.123H",
                     PhoneNumber="053087347821",
                     Username="hakaaannn.11",
-                    CreatedAt=DateTime.UtcNow.ToLocalTime(),
+                    CreatedAt=DateTime.UtcNow.Date,
                     IsDeleted=false
                 }
             };

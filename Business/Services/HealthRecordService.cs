@@ -12,7 +12,7 @@ using Business.Utilities.Mapping.Interface;
 
 namespace Business.Services
 {
-    public abstract class HealthRecordService : BaseService<HealthRecord, int, HealthRecordResponseDto>, IHealthRecordService
+    public class HealthRecordService : BaseService<HealthRecord, int, HealthRecordResponseDto>, IHealthRecordService
     {
         public HealthRecordService(IUnitOfWork unitOfWork, IMapperHelper mapperHelper)
             : base(unitOfWork, unitOfWork.HealthRecords, mapperHelper)
