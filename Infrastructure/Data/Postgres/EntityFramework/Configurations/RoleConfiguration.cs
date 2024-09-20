@@ -17,9 +17,9 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 
             var data = new Role[]
             {
-                new Role{Id=1, RoleName="Admin", CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false},
-                new Role{Id=2, RoleName="Dietitian", CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false},
-                new Role{Id=3, RoleName="Patient", CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false},
+                new Role{Id=1, RoleName="Admin", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false},
+                new Role{Id=2, RoleName="Dietitian", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false},
+                new Role{Id=3, RoleName="Patient", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false},
             };
             builder.HasData(data);
         }

@@ -25,7 +25,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Height= 178,
                     MedicalConditions="Tiroid Hastalığı",
                     Medications="Levotiron, Tefor, Euthyrox",
-                    CreatedAt=DateTime.UtcNow.ToLocalTime(),
+                    CreatedAt=DateTime.UtcNow.Date,
                     IsDeleted=false}
             };
             builder.HasData(data);

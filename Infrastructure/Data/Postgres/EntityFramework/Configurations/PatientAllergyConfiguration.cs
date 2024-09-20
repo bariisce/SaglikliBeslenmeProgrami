@@ -16,7 +16,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new PatientAllergy[]
             {
-                new PatientAllergy {Id=1, AllergyId=1, PatientId=1, Severity="Yüksek", ReactionDescription="Ansiyete ve sinirlilik hali", CreatedAt=DateTime.UtcNow.ToLocalTime(), IsDeleted=false}
+                new PatientAllergy {Id=1, AllergyId=1, PatientId=1, Severity="Yüksek", ReactionDescription="Ansiyete ve sinirlilik hali", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false}
             };
             builder.HasData(data);
         }

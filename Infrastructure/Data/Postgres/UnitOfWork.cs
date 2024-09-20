@@ -61,7 +61,7 @@ public class UnitOfWork : IUnitOfWork
             .Select(e => e.Entity);
         foreach (var updatedEntity in updatedEntities)
         {
-            updatedEntity.UpdatedAt = DateTime.UtcNow.ToLocalTime();
+            updatedEntity.UpdatedAt = DateTime.UtcNow.Date;
         }
         var result = await _postgresContext.SaveChangesAsync();
         

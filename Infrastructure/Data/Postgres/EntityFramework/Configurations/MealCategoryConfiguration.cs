@@ -21,7 +21,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Id=1,
                     CategoryName="Deniz Yemekleri",
                     Description="b12 ve demir eksikliği olanlar için",
-                    CreatedAt=DateTime.UtcNow.ToLocalTime(),
+                    CreatedAt=DateTime.UtcNow.Date,
                     IsDeleted=false
                 }
             };
