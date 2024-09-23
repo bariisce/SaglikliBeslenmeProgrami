@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -21,10 +22,10 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Id = 1,
                     DietitianId = 1,
                     PatientId = 1,
-                    StartDate = new DateTime(2024, 11, 11), EndDate = new DateTime(2025, 10, 10),
+                    StartDate = DateTimeKind.Utc, EndDate = DateTimeKind.Utc,
                     CaloriesPerDay = 200,
                     Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
-                    CreatedAt = DateTime.UtcNow.Date, IsDeleted = false
+                    CreatedAt = DateTime.UtcNow.ToTimeZone(), IsDeleted = false
                 }
             };
             builder.HasData(data);

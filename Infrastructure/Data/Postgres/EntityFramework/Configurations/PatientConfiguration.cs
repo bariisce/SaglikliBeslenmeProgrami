@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -25,7 +26,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Height= 178,
                     MedicalConditions="Tiroid Hastalığı",
                     Medications="Levotiron, Tefor, Euthyrox",
-                    CreatedAt=DateTime.UtcNow.Date,
+                    CreatedAt=DateTime.UtcNow.ToTimeZone(),
                     IsDeleted=false}
             };
             builder.HasData(data);

@@ -22,7 +22,7 @@ builder.Services.AddCors(options => options.AddPolicy("CorsPolicy", cBuilder =>
         .AllowAnyMethod()
         .SetIsOriginAllowed(_ => true)
         .AllowCredentials();
-}));
+}));    
 
 var postgresConnectionString = builder.Configuration.GetConnectionString("PsqlConnection");
 
@@ -34,9 +34,9 @@ builder.Services.AddSignalR();
 
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddMySingleton();
+//builder.Services.AddControllersWithViews();
 builder.Services.AddMyScoped();
+builder.Services.AddMySingleton();
 builder.Services.AddMyTransient();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -133,6 +133,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

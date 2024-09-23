@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -16,7 +17,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new Meal[]
             {
-                new Meal {Id=1, MealName="Karides", CategoryId=1, Calory=99, Description="Tiroit hastaları için deniz yemeği", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false}
+                new Meal {Id=1, MealName="Karides", CategoryId=1, Calory=99, Description="Tiroit hastaları için deniz yemeği", CreatedAt=DateTime.UtcNow.ToTimeZone(), IsDeleted=false}
             };
             builder.HasData(data);
         }

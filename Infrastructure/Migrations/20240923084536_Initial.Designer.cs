@@ -9,10 +9,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Infrastructure.Data.Postgres.Migrations
+namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PostgresContext))]
-    [Migration("20240920121412_Initial")]
+    [Migration("20240923084536_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -59,7 +59,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 1,
                             AllergyName = "İlaç Alerjisi",
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(30),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(5994),
                             Description = "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",
                             IsDeleted = false
                         });
@@ -86,8 +86,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Property<int>("DietitianId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("EndDate")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
@@ -95,8 +95,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Property<int>("PatientId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("StartDate")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -114,13 +114,13 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 1,
                             CaloriesPerDay = 200,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(1917),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(7806),
                             Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
                             DietitianId = 1,
-                            EndDate = new DateTime(2025, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = 1,
                             IsDeleted = false,
                             PatientId = 1,
-                            StartDate = new DateTime(2024, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = 1
                         });
                 });
 
@@ -162,7 +162,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(2376),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(8279),
                             DietPlanId = 1,
                             IsDeleted = false,
                             MealId = 1,
@@ -204,7 +204,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(768),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(6694),
                             IsDeleted = false,
                             Specialization = "Diyabet Diyetisyeni",
                             UserId = 1
@@ -251,7 +251,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(1288),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(7186),
                             DietPlanId = 1,
                             DietitianId = 1,
                             IsDeleted = false,
@@ -288,8 +288,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Property<int>("PatientId")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("RecordedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("RecordedDate")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -307,11 +307,11 @@ namespace Infrastructure.Data.Postgres.Migrations
                             BloodPressure = 120m,
                             BloodSugar = 150m,
                             Cholesterol = 239m,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(2912),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(8745),
                             HeartRate = 90m,
                             IsDeleted = false,
                             PatientId = 1,
-                            RecordedDate = new DateTime(2024, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            RecordedDate = 1
                         });
                 });
 
@@ -358,7 +358,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                             Id = 1,
                             Calory = 99m,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(3897),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(9626),
                             Description = "Tiroit hastaları için deniz yemeği",
                             IsDeleted = false,
                             MealName = "Karides"
@@ -399,7 +399,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 1,
                             CategoryName = "Deniz Yemekleri",
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(3368),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(9168),
                             Description = "b12 ve demir eksikliği olanlar için",
                             IsDeleted = false
                         });
@@ -448,7 +448,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(4374),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(44),
                             DietPlanId = 1,
                             Ingredients = "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu",
                             Instructions = "Yemeği Yapma Adımları",
@@ -501,7 +501,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(5414),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(900),
                             Height = 178f,
                             IsDeleted = false,
                             MedicalConditions = "Tiroid Hastalığı",
@@ -555,7 +555,7 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 1,
                             AllergyId = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(4941),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(459),
                             IsDeleted = false,
                             PatientId = 1,
                             ReactionDescription = "Ansiyete ve sinirlilik hali",
@@ -592,21 +592,21 @@ namespace Infrastructure.Data.Postgres.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(5887),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1380),
                             IsDeleted = false,
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(5893),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1387),
                             IsDeleted = false,
                             RoleName = "Dietitian"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(5896),
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1392),
                             IsDeleted = false,
                             RoleName = "Patient"
                         });
@@ -623,8 +623,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("BirthDate")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -677,8 +677,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 1,
                             Age = 22,
-                            BirthDate = new DateTime(2002, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(6355),
+                            BirthDate = 1,
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1902),
                             Email = "barisceylan907@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -693,8 +693,8 @@ namespace Infrastructure.Data.Postgres.Migrations
                         {
                             Id = 2,
                             Age = 21,
-                            BirthDate = new DateTime(2003, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedAt = new DateTime(2024, 9, 20, 15, 14, 11, 933, DateTimeKind.Local).AddTicks(6360),
+                            BirthDate = 1,
+                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1909),
                             Email = "hakantemiz@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,

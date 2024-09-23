@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.Entities.Base
 {
@@ -16,7 +17,7 @@ namespace Infrastructure.Data.Postgres.Entities.Base
 
         protected Entity()
         {
-            CreatedAt = DateTime.UtcNow.ToLocalTime();
+            CreatedAt = DateTime.UtcNow.ToTimeZone();
             IsDeleted = false;
         }
     }
