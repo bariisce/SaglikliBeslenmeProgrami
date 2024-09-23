@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -21,7 +22,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Id=1,
                     CategoryName="Deniz Yemekleri",
                     Description="b12 ve demir eksikliği olanlar için",
-                    CreatedAt=DateTime.UtcNow.Date,
+                    CreatedAt=DateTime.UtcNow.ToTimeZone(),
                     IsDeleted=false
                 }
             };

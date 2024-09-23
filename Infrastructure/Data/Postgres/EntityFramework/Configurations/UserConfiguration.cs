@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -23,13 +24,13 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Surname="Ceylan",
                     RoleId=2,
                     Age=22,
-                    BirthDate=new DateTime(2002,9,17),
+                    BirthDate=DateTimeKind.Utc,
                     Email="barisceylan907@gmail.com",
                     Gender="Erkek",
                     Password="baris.C123",
                     PhoneNumber="05305137988",
                     Username="barisscl",
-                    CreatedAt=DateTime.UtcNow.Date,
+                    CreatedAt=DateTime.UtcNow.ToTimeZone(),
                     IsDeleted=false
                 },
                 new User
@@ -39,13 +40,13 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Surname="Temiz",
                     RoleId=3,
                     Age=21,
-                    BirthDate=new DateTime(2003,8,10),
+                    BirthDate=DateTimeKind.Utc,
                     Email="hakantemiz@gmail.com",
                     Gender="Erkek",
                     Password="hakan.123H",
                     PhoneNumber="053087347821",
                     Username="hakaaannn.11",
-                    CreatedAt=DateTime.UtcNow.Date,
+                    CreatedAt=DateTime.UtcNow.ToTimeZone(),
                     IsDeleted=false
                 }
             };

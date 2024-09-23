@@ -1,4 +1,5 @@
-﻿using Infrastructure.Data.Postgres.Entities;
+﻿using Core.Utilities;
+using Infrastructure.Data.Postgres.Entities;
 using Infrastructure.Data.Postgres.Entities.Base.Interface;
 using Infrastructure.Data.Postgres.EntityFramework;
 using Infrastructure.Data.Postgres.Repositories;
@@ -61,7 +62,7 @@ public class UnitOfWork : IUnitOfWork
             .Select(e => e.Entity);
         foreach (var updatedEntity in updatedEntities)
         {
-            updatedEntity.UpdatedAt = DateTime.UtcNow.Date;
+            updatedEntity.UpdatedAt = DateTime.UtcNow.ToTimeZone();
         }
         var result = await _postgresContext.SaveChangesAsync();
         

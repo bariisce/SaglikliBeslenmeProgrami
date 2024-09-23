@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Core.Utilities;
 
 namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
 {
@@ -16,7 +17,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new PatientAllergy[]
             {
-                new PatientAllergy {Id=1, AllergyId=1, PatientId=1, Severity="Yüksek", ReactionDescription="Ansiyete ve sinirlilik hali", CreatedAt=DateTime.UtcNow.Date, IsDeleted=false}
+                new PatientAllergy {Id=1, AllergyId=1, PatientId=1, Severity="Yüksek", ReactionDescription="Ansiyete ve sinirlilik hali", CreatedAt=DateTime.UtcNow.ToTimeZone(), IsDeleted=false}
             };
             builder.HasData(data);
         }
