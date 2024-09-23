@@ -14,6 +14,6 @@ namespace Business.Models.Response
         public decimal HeartRate { get; set; } = default!;
         public decimal Cholesterol { get; set; } = default!;
         public decimal BloodSugar { get; set; } = default!;
-        public DateTime RecordedDate { get; set; } = default!;
+        public DateTimeKind RecordedDate { get; set; } = default!;
     }
 }
