@@ -34,7 +34,7 @@ builder.Services.AddSignalR();
 
 
 // Add services to the container.
-//builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
 builder.Services.AddMyScoped();
 builder.Services.AddMySingleton();
 builder.Services.AddMyTransient();
