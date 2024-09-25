@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PostgresContext))]
-    [Migration("20240923084536_Initial")]
+    [Migration("20240925174001_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -59,7 +59,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyName = "İlaç Alerjisi",
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(5994),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(1663),
                             Description = "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",
                             IsDeleted = false
                         });
@@ -114,7 +114,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CaloriesPerDay = 200,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(7806),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(3439),
                             Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
                             DietitianId = 1,
                             EndDate = 1,
@@ -162,7 +162,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(8279),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(3972),
                             DietPlanId = 1,
                             IsDeleted = false,
                             MealId = 1,
@@ -204,7 +204,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(6694),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(2260),
                             IsDeleted = false,
                             Specialization = "Diyabet Diyetisyeni",
                             UserId = 1
@@ -251,7 +251,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(7186),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(2893),
                             DietPlanId = 1,
                             DietitianId = 1,
                             IsDeleted = false,
@@ -307,7 +307,7 @@ namespace Infrastructure.Migrations
                             BloodPressure = 120m,
                             BloodSugar = 150m,
                             Cholesterol = 239m,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(8745),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(4411),
                             HeartRate = 90m,
                             IsDeleted = false,
                             PatientId = 1,
@@ -358,7 +358,7 @@ namespace Infrastructure.Migrations
                             Id = 1,
                             Calory = 99m,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(9626),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(5315),
                             Description = "Tiroit hastaları için deniz yemeği",
                             IsDeleted = false,
                             MealName = "Karides"
@@ -399,7 +399,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CategoryName = "Deniz Yemekleri",
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 791, DateTimeKind.Utc).AddTicks(9168),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(4840),
                             Description = "b12 ve demir eksikliği olanlar için",
                             IsDeleted = false
                         });
@@ -448,7 +448,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(44),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(5754),
                             DietPlanId = 1,
                             Ingredients = "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu",
                             Instructions = "Yemeği Yapma Adımları",
@@ -501,7 +501,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(900),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(6698),
                             Height = 178f,
                             IsDeleted = false,
                             MedicalConditions = "Tiroid Hastalığı",
@@ -555,7 +555,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyId = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(459),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(6241),
                             IsDeleted = false,
                             PatientId = 1,
                             ReactionDescription = "Ansiyete ve sinirlilik hali",
@@ -592,21 +592,21 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1380),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7257),
                             IsDeleted = false,
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1387),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7262),
                             IsDeleted = false,
                             RoleName = "Dietitian"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1392),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7266),
                             IsDeleted = false,
                             RoleName = "Patient"
                         });
@@ -678,7 +678,7 @@ namespace Infrastructure.Migrations
                             Id = 1,
                             Age = 22,
                             BirthDate = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1902),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7729),
                             Email = "barisceylan907@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -694,7 +694,7 @@ namespace Infrastructure.Migrations
                             Id = 2,
                             Age = 21,
                             BirthDate = 1,
-                            CreatedAt = new DateTime(2024, 9, 23, 11, 45, 35, 792, DateTimeKind.Utc).AddTicks(1909),
+                            CreatedAt = new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7736),
                             Email = "hakantemiz@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -748,7 +748,7 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.Dietitian", b =>
                 {
                     b.HasOne("Infrastructure.Data.Postgres.Entities.User", "Users")
-                        .WithMany()
+                        .WithMany("Dietitians")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -903,6 +903,8 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.User", b =>
                 {
+                    b.Navigation("Dietitians");
+
                     b.Navigation("Patients");
                 });
 #pragma warning restore 612, 618
