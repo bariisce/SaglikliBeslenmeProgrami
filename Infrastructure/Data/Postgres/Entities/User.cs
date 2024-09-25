@@ -23,6 +23,8 @@ namespace Infrastructure.Data.Postgres.Entities
 
         public Role Roles { get; set; }                    = default!;
         public ICollection<Patient> Patients { get; set; } = default!;
+        public ICollection<Dietitian> Dietitians { get; set; } = default!;
+
 
 
     }
