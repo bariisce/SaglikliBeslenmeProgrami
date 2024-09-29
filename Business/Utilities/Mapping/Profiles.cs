@@ -18,56 +18,56 @@ public class Profiles : AutoMapper.Profile
 {
     public Profiles()
     {
-        CreateMap<Allergy, AllergyResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<AllergyCreateDto, Allergy>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<Allergy, AllergyResponseDto>(); 
+        CreateMap<AllergyCreateDto, Allergy>();   
         CreateMap<AllergyUpdateDto, Allergy>();
 
-        CreateMap<Role, RoleResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<RoleCreateDto, Role>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<Role, RoleResponseDto>(); 
+        CreateMap<RoleCreateDto, Role>();   
         CreateMap<RoleUpdateDto, Role>();
 
-        CreateMap<User, UserResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<UserCreateDto, User>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<User, UserResponseDto>(); 
+        CreateMap<UserCreateDto, User>();   
         CreateMap<UserUpdateDto, User>();
 
-        CreateMap<Patient, PatientResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<PatientCreateDto, Patient>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<Patient, PatientResponseDto>(); 
+        CreateMap<PatientCreateDto, Patient>();   
         CreateMap<PatientUpdateDto, Patient>();
 
-        CreateMap<Dietitian, DietitianResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<DietitianCreateDto, Dietitian>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<Dietitian, DietitianResponseDto>(); 
+        CreateMap<DietitianCreateDto, Dietitian>();   
         CreateMap<DietitianUpdateDto, Dietitian>();
 
-        CreateMap<DietitianPatient, DietitianPatientResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<DietitianPatientCreateDto, DietitianPatient>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<DietitianPatient, DietitianPatientResponseDto>(); 
+        CreateMap<DietitianPatientCreateDto, DietitianPatient>();   
         CreateMap<DietitianPatientUpdateDto, DietitianPatient>();
 
-        CreateMap<PatientAllergy, PatientAllergyResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<PatientAllergyCreateDto, PatientAllergy>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<PatientAllergy, PatientAllergyResponseDto>(); 
+        CreateMap<PatientAllergyCreateDto, PatientAllergy>();   
         CreateMap<PatientAllergyUpdateDto, PatientAllergy>();
 
-        CreateMap<Meal, MealResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<MealCreateDto, Meal>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<Meal, MealResponseDto>(); 
+        CreateMap<MealCreateDto, Meal>();   
         CreateMap<MealUpdateDto, Meal>();
 
-        CreateMap<MealCategory, MealCategoryResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<MealCategoryCreateDto, MealCategory>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<MealCategory, MealCategoryResponseDto>(); 
+        CreateMap<MealCategoryCreateDto, MealCategory>();   
         CreateMap<MealCategoryUpdateDto, MealCategory>();
 
-        CreateMap<DietPlan, DietPlanResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<DietPlanCreateDto, DietPlan>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<DietPlan, DietPlanResponseDto>(); 
+        CreateMap<DietPlanCreateDto, DietPlan>();   
         CreateMap<DietPlanUpdateDto, DietPlan>();
 
-        CreateMap<DietPlanMeal, DietPlanMealResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<DietPlanMealCreateDto, DietPlanMeal>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<DietPlanMeal, DietPlanMealResponseDto>(); 
+        CreateMap<DietPlanMealCreateDto, DietPlanMeal>();   
         CreateMap<DietPlanMealUpdateDto, DietPlanMeal>();
 
-        CreateMap<HealthRecord, HealthRecordResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<HealthRecordCreateDto, HealthRecord>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<HealthRecord, HealthRecordResponseDto>(); 
+        CreateMap<HealthRecordCreateDto, HealthRecord>();   
         CreateMap<HealthRecordUpdateDto, HealthRecord>();
 
-        CreateMap<MealRecipe, MealRecipeResponseDto>(); // Admin -> AdminResponseDTO mapping
-        CreateMap<MealRecipeCreateDto, MealRecipe>();   // AdminCreateDTO -> Admin mapping
+        CreateMap<MealRecipe, MealRecipeResponseDto>(); 
+        CreateMap<MealRecipeCreateDto, MealRecipe>();   
         CreateMap<MealRecipeUpdateDto, MealRecipe>();
     }
 }

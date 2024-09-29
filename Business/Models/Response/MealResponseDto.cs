@@ -13,5 +13,6 @@ namespace Business.Models.Response
         public string MealName { get; set; } = default!;
         public string Description { get; set; } = default!;
         public decimal Calory { get; set; } = default!;
+        public string Image { get; set; }
     }
 }
