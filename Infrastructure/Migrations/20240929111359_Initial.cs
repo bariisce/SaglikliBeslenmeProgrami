@@ -74,6 +74,7 @@ namespace Infrastructure.Migrations
                     MealName = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Calory = table.Column<decimal>(type: "numeric", nullable: false),
+                    Image = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
@@ -360,76 +361,76 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Allergies",
                 columns: new[] { "Id", "AllergyName", "CreatedAt", "Description", "IsDeleted", "UpdatedAt" },
-                values: new object[] { 1, "İlaç Alerjisi", new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(1663), "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi", false, null });
+                values: new object[] { 1, "İlaç Alerjisi", new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(5083), "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi", false, null });
 
             migrationBuilder.InsertData(
                 table: "MealCategories",
                 columns: new[] { "Id", "CategoryName", "CreatedAt", "Description", "IsDeleted", "UpdatedAt" },
-                values: new object[] { 1, "Deniz Yemekleri", new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(4840), "b12 ve demir eksikliği olanlar için", false, null });
+                values: new object[] { 1, "Deniz Yemekleri", new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(8162), "b12 ve demir eksikliği olanlar için", false, null });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "CreatedAt", "IsDeleted", "RoleName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7257), false, "Admin", null },
-                    { 2, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7262), false, "Dietitian", null },
-                    { 3, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7266), false, "Patient", null }
+                    { 1, new DateTime(2024, 9, 29, 14, 13, 58, 954, DateTimeKind.Utc).AddTicks(312), false, "Admin", null },
+                    { 2, new DateTime(2024, 9, 29, 14, 13, 58, 954, DateTimeKind.Utc).AddTicks(316), false, "Dietitian", null },
+                    { 3, new DateTime(2024, 9, 29, 14, 13, 58, 954, DateTimeKind.Utc).AddTicks(321), false, "Patient", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Meals",
-                columns: new[] { "Id", "Calory", "CategoryId", "CreatedAt", "Description", "IsDeleted", "MealName", "UpdatedAt" },
-                values: new object[] { 1, 99m, 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(5315), "Tiroit hastaları için deniz yemeği", false, "Karides", null });
+                columns: new[] { "Id", "Calory", "CategoryId", "CreatedAt", "Description", "Image", "IsDeleted", "MealName", "UpdatedAt" },
+                values: new object[] { 1, 99m, 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(8571), "Tiroit hastaları için deniz yemeği", "1.jpg", false, "Karides", null });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Age", "BirthDate", "CreatedAt", "Email", "Gender", "IsDeleted", "Name", "Password", "PhoneNumber", "RoleId", "Surname", "UpdatedAt", "Username" },
                 values: new object[,]
                 {
-                    { 1, 22, 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7729), "barisceylan907@gmail.com", "Erkek", false, "Barış", "baris.C123", "05305137988", 2, "Ceylan", null, "barisscl" },
-                    { 2, 21, 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(7736), "hakantemiz@gmail.com", "Erkek", false, "Hakan", "hakan.123H", "053087347821", 3, "Temiz", null, "hakaaannn.11" }
+                    { 1, 22, 1, new DateTime(2024, 9, 29, 14, 13, 58, 954, DateTimeKind.Utc).AddTicks(743), "barisceylan907@gmail.com", "Erkek", false, "Barış", "baris.C123", "05305137988", 2, "Ceylan", null, "barisscl" },
+                    { 2, 21, 1, new DateTime(2024, 9, 29, 14, 13, 58, 954, DateTimeKind.Utc).AddTicks(750), "hakantemiz@gmail.com", "Erkek", false, "Hakan", "hakan.123H", "053087347821", 3, "Temiz", null, "hakaaannn.11" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Dietitians",
                 columns: new[] { "Id", "CreatedAt", "IsDeleted", "Specialization", "UpdatedAt", "UserId" },
-                values: new object[] { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(2260), false, "Diyabet Diyetisyeni", null, 1 });
+                values: new object[] { 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(5711), false, "Diyabet Diyetisyeni", null, 1 });
 
             migrationBuilder.InsertData(
                 table: "Patients",
                 columns: new[] { "Id", "CreatedAt", "Height", "IsDeleted", "MedicalConditions", "Medications", "UpdatedAt", "UserId", "Weight" },
-                values: new object[] { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(6698), 178f, false, "Tiroid Hastalığı", "Levotiron, Tefor, Euthyrox", null, 2, 70f });
+                values: new object[] { 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(9847), 178f, false, "Tiroid Hastalığı", "Levotiron, Tefor, Euthyrox", null, 2, 70f });
 
             migrationBuilder.InsertData(
                 table: "DietPlans",
                 columns: new[] { "Id", "CaloriesPerDay", "CreatedAt", "Details", "DietitianId", "EndDate", "IsDeleted", "PatientId", "StartDate", "UpdatedAt" },
-                values: new object[] { 1, 200, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(3439), "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !", 1, 1, false, 1, 1, null });
+                values: new object[] { 1, 200, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(6764), "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !", 1, 1, false, 1, 1, null });
 
             migrationBuilder.InsertData(
                 table: "HealthRecords",
                 columns: new[] { "Id", "BloodPressure", "BloodSugar", "Cholesterol", "CreatedAt", "HeartRate", "IsDeleted", "PatientId", "RecordedDate", "UpdatedAt" },
-                values: new object[] { 1, 120m, 150m, 239m, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(4411), 90m, false, 1, 1, null });
+                values: new object[] { 1, 120m, 150m, 239m, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(7707), 90m, false, 1, 1, null });
 
             migrationBuilder.InsertData(
                 table: "PatientAllergies",
                 columns: new[] { "Id", "AllergyId", "CreatedAt", "IsDeleted", "PatientId", "ReactionDescription", "Severity", "UpdatedAt" },
-                values: new object[] { 1, 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(6241), false, 1, "Ansiyete ve sinirlilik hali", "Yüksek", null });
+                values: new object[] { 1, 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(9431), false, 1, "Ansiyete ve sinirlilik hali", "Yüksek", null });
 
             migrationBuilder.InsertData(
                 table: "DietPlanMeals",
                 columns: new[] { "Id", "CreatedAt", "DietPlanId", "IsDeleted", "MealId", "ServingSize", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(3972), 1, false, 1, 2f, null });
+                values: new object[] { 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(7258), 1, false, 1, 2f, null });
 
             migrationBuilder.InsertData(
                 table: "DietitianPatients",
                 columns: new[] { "Id", "CreatedAt", "DietPlanId", "DietitianId", "IsDeleted", "PatientId", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(2893), 1, 1, false, 1, null });
+                values: new object[] { 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(6268), 1, 1, false, 1, null });
 
             migrationBuilder.InsertData(
                 table: "MealRecipes",
                 columns: new[] { "Id", "CreatedAt", "DietPlanId", "Ingredients", "Instructions", "IsDeleted", "MealId", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 9, 25, 20, 40, 1, 167, DateTimeKind.Utc).AddTicks(5754), 1, "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", "Yemeği Yapma Adımları", false, 1, null });
+                values: new object[] { 1, new DateTime(2024, 9, 29, 14, 13, 58, 953, DateTimeKind.Utc).AddTicks(9017), 1, "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", "Yemeği Yapma Adımları", false, 1, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_DietitianPatients_DietitianId",

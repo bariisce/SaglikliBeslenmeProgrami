@@ -17,7 +17,7 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             base.Configure(builder);
             var data = new Meal[]
             {
-                new Meal {Id=1, MealName="Karides", CategoryId=1, Calory=99, Description="Tiroit hastaları için deniz yemeği", CreatedAt=DateTime.UtcNow.ToTimeZone(), IsDeleted=false}
+                new Meal {Id=1, MealName="Karides", CategoryId=1, Calory=99, Description="Tiroit hastaları için deniz yemeği", Image="1.jpg", CreatedAt=DateTime.UtcNow.ToTimeZone(), IsDeleted=false}
             };
             builder.HasData(data);
         }
