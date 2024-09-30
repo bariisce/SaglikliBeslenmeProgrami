@@ -11,8 +11,8 @@ namespace Infrastructure.Data.Postgres.Entities
     {
         public int DietitianId { get; set; }                            = default!;
         public int PatientId { get; set; }                              = default!;
-        public DateTimeKind StartDate { get; set; }                         = default!;
-        public DateTimeKind EndDate { get; set; }                           = default!;
+        public String StartDate { get; set; }                         = default!;
+        public String EndDate { get; set; }                           = default!;
         public int CaloriesPerDay { get; set; }                         = default!;
         public string Details { get; set; }                             = default!;
                                                                         
