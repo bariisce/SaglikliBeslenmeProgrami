@@ -14,7 +14,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public decimal HeartRate { get; set; }      = default!;
         public decimal Cholesterol { get; set; }    = default!;
         public decimal BloodSugar { get; set; }     = default!;
-        public DateTimeKind RecordedDate { get; set; }  = default!;
+        public String RecordedDate { get; set; }  = default!;
 
         public Patient Patient { get; set; } = default!;
     }
