@@ -11,8 +11,8 @@ namespace Business.Models.Response
         public DietitianResponseDto DietitianResponseDto { get; set; } = default!;
         public PatientResponseDto PatientResponseDto { get; set; } = default!;
         public int Id { get; set; } = default!;
-        public DateTimeKind StartDate { get; set; } = default!;
-        public DateTimeKind EndDate { get; set; } = default!;
+        public string StartDate { get; set; } = default!;
+        public string EndDate { get; set; } = default!;
         public int CaloriesPerDay { get; set; } = default!;
         public string Details { get; set; } = default!;
     }

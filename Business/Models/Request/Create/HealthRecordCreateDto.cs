@@ -13,6 +13,6 @@ namespace Business.Models.Request.Create
         public decimal HeartRate { get; set; } = default!;
         public decimal Cholesterol { get; set; } = default!;
         public decimal BloodSugar { get; set; } = default!;
-        public String RecordedDate { get; set; } = default!;
+        public string RecordedDate { get; set; } = default!;
     }
 }
