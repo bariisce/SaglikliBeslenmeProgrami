@@ -11,7 +11,7 @@ namespace Infrastructure.Data.Postgres.Entities
     {
         public int DietPlanId { get; set; }    = default!;
         public int MealId { get; set; }        = default!;
-        public float ServingSize { get; set; } = default!;
+        public int ServingSize { get; set; } = default!;
                                                
         public DietPlan DietPlan { get; set; } = default!;
         public Meal Meal { get; set; } = default!;

@@ -20,11 +20,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             {
                 new User
                 {
-                    Id = 1, Name="Barış",
+                    Id = 1, 
+                    Name="Barış",
                     Surname="Ceylan",
                     RoleId=2,
                     Age=22,
-                    BirthDate="2002-09-17",
                     Email="barisceylan907@gmail.com",
                     Gender="Erkek",
                     Password="baris.C123",
@@ -40,7 +40,6 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Surname="Temiz",
                     RoleId=3,
                     Age=21,
-                    BirthDate="2004-10-12",
                     Email="hakantemiz@gmail.com",
                     Gender="Erkek",
                     Password="hakan.123H",

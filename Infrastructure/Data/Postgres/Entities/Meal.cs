@@ -14,8 +14,11 @@ namespace Infrastructure.Data.Postgres.Entities
         public string Description { get; set; }                      = default!;
         public decimal Calory { get; set; }                          = default!;
         public string Image { get; set; } = default!;
-                                                                     
-                                                                    
+        public string Protein { get; set; } = default!;
+        public string Carbonhydrate { get; set; } = default!;
+        public string Fat { get; set; } = default!;
+
+
         public MealCategory Category { get; set; }                   = default!;
         public ICollection<DietPlanMeal> DietPlanMeals { get; set; } = default!;
 

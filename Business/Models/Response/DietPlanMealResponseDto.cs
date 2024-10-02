@@ -11,6 +11,6 @@ namespace Business.Models.Response
         public DietPlanResponseDto DietPlanResponseDto { get; set; } = default!;
         public MealResponseDto MealResponseDto { get; set; } = default!;
         public int Id { get; set; } = default!;
-        public float ServingSize { get; set; } = default!;
+        public int ServingSize { get; set; } = default!;
     }
 }

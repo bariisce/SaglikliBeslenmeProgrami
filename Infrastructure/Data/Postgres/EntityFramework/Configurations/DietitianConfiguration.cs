@@ -19,9 +19,11 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
             {
                 new Dietitian 
                 { 
-                    Id=1, 
-                    Specialization="Diyabet Diyetisyeni", 
-                    UserId=1, 
+                    Id=1,
+                    UserId=1,
+                    Specialization="Diyabet Diyetisyeni",
+                    ExperienceYears=1,
+                    IsActive=true,
                     CreatedAt=DateTime.UtcNow.ToTimeZone(), 
                     IsDeleted=false}
             };

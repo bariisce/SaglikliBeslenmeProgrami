@@ -75,6 +75,9 @@ namespace Infrastructure.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     Calory = table.Column<decimal>(type: "numeric", nullable: false),
                     Image = table.Column<string>(type: "text", nullable: false),
+                    Protein = table.Column<string>(type: "text", nullable: false),
+                    Carbonhydrate = table.Column<string>(type: "text", nullable: false),
+                    Fat = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
@@ -102,7 +105,6 @@ namespace Infrastructure.Migrations
                     PhoneNumber = table.Column<string>(type: "text", nullable: false),
                     Username = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
-                    BirthDate = table.Column<string>(type: "text", nullable: false),
                     Gender = table.Column<string>(type: "text", nullable: false),
                     Age = table.Column<int>(type: "integer", nullable: false),
                     RoleId = table.Column<int>(type: "integer", nullable: false),
@@ -122,6 +124,32 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MealRecipes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    MealId = table.Column<int>(type: "integer", nullable: false),
+                    Ingredients = table.Column<string>(type: "text", nullable: false),
+                    Instructions = table.Column<string>(type: "text", nullable: false),
+                    PreparationTime = table.Column<string>(type: "text", nullable: false),
+                    CookingTime = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MealRecipes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MealRecipes_Meals_MealId",
+                        column: x => x.MealId,
+                        principalTable: "Meals",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Dietitians",
                 columns: table => new
                 {
@@ -129,6 +157,8 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     Specialization = table.Column<string>(type: "text", nullable: false),
+                    ExperienceYears = table.Column<int>(type: "integer", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
@@ -178,9 +208,11 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     DietitianId = table.Column<int>(type: "integer", nullable: false),
                     PatientId = table.Column<int>(type: "integer", nullable: false),
+                    DietPlanName = table.Column<string>(type: "text", nullable: false),
                     StartDate = table.Column<string>(type: "text", nullable: false),
                     EndDate = table.Column<string>(type: "text", nullable: false),
                     CaloriesPerDay = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<bool>(type: "boolean", nullable: false),
                     Details = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -305,7 +337,7 @@ namespace Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     DietPlanId = table.Column<int>(type: "integer", nullable: false),
                     MealId = table.Column<int>(type: "integer", nullable: false),
-                    ServingSize = table.Column<float>(type: "real", nullable: false),
+                    ServingSize = table.Column<int>(type: "integer", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
@@ -327,110 +359,79 @@ namespace Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "MealRecipes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    DietPlanId = table.Column<int>(type: "integer", nullable: false),
-                    MealId = table.Column<int>(type: "integer", nullable: false),
-                    Ingredients = table.Column<string>(type: "text", nullable: false),
-                    Instructions = table.Column<string>(type: "text", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MealRecipes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MealRecipes_DietPlans_DietPlanId",
-                        column: x => x.DietPlanId,
-                        principalTable: "DietPlans",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MealRecipes_Meals_MealId",
-                        column: x => x.MealId,
-                        principalTable: "Meals",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.InsertData(
                 table: "Allergies",
                 columns: new[] { "Id", "AllergyName", "CreatedAt", "Description", "IsDeleted", "UpdatedAt" },
-                values: new object[] { 1, "İlaç Alerjisi", new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(5688), "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi", false, null });
+                values: new object[] { 1, "İlaç Alerjisi", new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(5541), "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi", false, null });
 
             migrationBuilder.InsertData(
                 table: "MealCategories",
                 columns: new[] { "Id", "CategoryName", "CreatedAt", "Description", "IsDeleted", "UpdatedAt" },
-                values: new object[] { 1, "Deniz Yemekleri", new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9605), "b12 ve demir eksikliği olanlar için", false, null });
+                values: new object[] { 1, "Deniz Yemekleri", new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(9726), "b12 ve demir eksikliği olanlar için", false, null });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "CreatedAt", "IsDeleted", "RoleName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1597), false, "Admin", null },
-                    { 2, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1601), false, "Dietitian", null },
-                    { 3, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1605), false, "Patient", null }
+                    { 1, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2190), false, "Admin", null },
+                    { 2, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2195), false, "Dietitian", null },
+                    { 3, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2199), false, "Patient", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Meals",
-                columns: new[] { "Id", "Calory", "CategoryId", "CreatedAt", "Description", "Image", "IsDeleted", "MealName", "UpdatedAt" },
-                values: new object[] { 1, 99m, 1, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9979), "Tiroit hastaları için deniz yemeği", "1.jpg", false, "Karides", null });
+                columns: new[] { "Id", "Calory", "Carbonhydrate", "CategoryId", "CreatedAt", "Description", "Fat", "Image", "IsDeleted", "MealName", "Protein", "UpdatedAt" },
+                values: new object[] { 1, 99m, "10 g", 1, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(198), "Tiroit hastaları için deniz yemeği", "20 g", "1.jpg", false, "Karides", "50 g", null });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Age", "BirthDate", "CreatedAt", "Email", "Gender", "IsDeleted", "Name", "Password", "PhoneNumber", "RoleId", "Surname", "UpdatedAt", "Username" },
+                columns: new[] { "Id", "Age", "CreatedAt", "Email", "Gender", "IsDeleted", "Name", "Password", "PhoneNumber", "RoleId", "Surname", "UpdatedAt", "Username" },
                 values: new object[,]
                 {
-                    { 1, 22, "2002-09-17", new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(2041), "barisceylan907@gmail.com", "Erkek", false, "Barış", "baris.C123", "05305137988", 2, "Ceylan", null, "barisscl" },
-                    { 2, 21, "2004-10-12", new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(2047), "hakantemiz@gmail.com", "Erkek", false, "Hakan", "hakan.123H", "053087347821", 3, "Temiz", null, "hakaaannn.11" }
+                    { 1, 22, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2812), "barisceylan907@gmail.com", "Erkek", false, "Barış", "baris.C123", "05305137988", 2, "Ceylan", null, "barisscl" },
+                    { 2, 21, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2817), "hakantemiz@gmail.com", "Erkek", false, "Hakan", "hakan.123H", "053087347821", 3, "Temiz", null, "hakaaannn.11" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Dietitians",
-                columns: new[] { "Id", "CreatedAt", "IsDeleted", "Specialization", "UpdatedAt", "UserId" },
-                values: new object[] { 1, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(6233), false, "Diyabet Diyetisyeni", null, 1 });
+                columns: new[] { "Id", "CreatedAt", "ExperienceYears", "IsActive", "IsDeleted", "Specialization", "UpdatedAt", "UserId" },
+                values: new object[] { 1, new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(6285), 1, true, false, "Diyabet Diyetisyeni", null, 1 });
+
+            migrationBuilder.InsertData(
+                table: "MealRecipes",
+                columns: new[] { "Id", "CookingTime", "CreatedAt", "Ingredients", "Instructions", "IsDeleted", "MealId", "PreparationTime", "UpdatedAt" },
+                values: new object[] { 1, "20 dakika", new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(695), "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", "Yemeği Yapma Adımları", false, 1, "30 dakika", null });
 
             migrationBuilder.InsertData(
                 table: "Patients",
                 columns: new[] { "Id", "CreatedAt", "Height", "IsDeleted", "MedicalConditions", "Medications", "UpdatedAt", "UserId", "Weight" },
-                values: new object[] { 1, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1176), 178f, false, "Tiroid Hastalığı", "Levotiron, Tefor, Euthyrox", null, 2, 70f });
+                values: new object[] { 1, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(1728), 178f, false, "Tiroid Hastalığı", "Levotiron, Tefor, Euthyrox", null, 2, 70f });
 
             migrationBuilder.InsertData(
                 table: "DietPlans",
-                columns: new[] { "Id", "CaloriesPerDay", "CreatedAt", "Details", "DietitianId", "EndDate", "IsDeleted", "PatientId", "StartDate", "UpdatedAt" },
-                values: new object[] { 1, 200, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(8251), "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !", 1, "2025-06-10", false, 1, "2024-11-11", null });
+                columns: new[] { "Id", "CaloriesPerDay", "CreatedAt", "Details", "DietPlanName", "DietitianId", "EndDate", "IsDeleted", "PatientId", "StartDate", "Status", "UpdatedAt" },
+                values: new object[] { 1, 200, new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(8168), "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !", "Kilo Verme Programı", 1, "2025-06-10", false, 1, "2024-11-11", true, null });
 
             migrationBuilder.InsertData(
                 table: "HealthRecords",
                 columns: new[] { "Id", "BloodPressure", "BloodSugar", "Cholesterol", "CreatedAt", "HeartRate", "IsDeleted", "PatientId", "RecordedDate", "UpdatedAt" },
-                values: new object[] { 1, 120m, 150m, 239m, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9191), 90m, false, 1, "2024-12-08", null });
+                values: new object[] { 1, 120m, 150m, 239m, new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(9224), 90m, false, 1, "2024-12-08", null });
 
             migrationBuilder.InsertData(
                 table: "PatientAllergies",
                 columns: new[] { "Id", "AllergyId", "CreatedAt", "IsDeleted", "PatientId", "ReactionDescription", "Severity", "UpdatedAt" },
-                values: new object[] { 1, 1, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(775), false, 1, "Ansiyete ve sinirlilik hali", "Yüksek", null });
+                values: new object[] { 1, 1, new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(1192), false, 1, "Ansiyete ve sinirlilik hali", "Yüksek", null });
 
             migrationBuilder.InsertData(
                 table: "DietPlanMeals",
                 columns: new[] { "Id", "CreatedAt", "DietPlanId", "IsDeleted", "MealId", "ServingSize", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(8755), 1, false, 1, 2f, null });
+                values: new object[] { 1, new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(8711), 1, false, 1, 2, null });
 
             migrationBuilder.InsertData(
                 table: "DietitianPatients",
                 columns: new[] { "Id", "CreatedAt", "DietPlanId", "DietitianId", "IsDeleted", "PatientId", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(6690), 1, 1, false, 1, null });
-
-            migrationBuilder.InsertData(
-                table: "MealRecipes",
-                columns: new[] { "Id", "CreatedAt", "DietPlanId", "Ingredients", "Instructions", "IsDeleted", "MealId", "UpdatedAt" },
-                values: new object[] { 1, new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(356), 1, "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu", "Yemeği Yapma Adımları", false, 1, null });
+                values: new object[] { 1, new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(6835), 1, 1, false, 1, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_DietitianPatients_DietitianId",
@@ -476,11 +477,6 @@ namespace Infrastructure.Migrations
                 name: "IX_HealthRecords_PatientId",
                 table: "HealthRecords",
                 column: "PatientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MealRecipes_DietPlanId",
-                table: "MealRecipes",
-                column: "DietPlanId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MealRecipes_MealId",
