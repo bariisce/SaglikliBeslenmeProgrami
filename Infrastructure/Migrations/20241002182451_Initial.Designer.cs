@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(PostgresContext))]
-    [Migration("20241001165758_Initial")]
+    [Migration("20241002182451_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -59,7 +59,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyName = "İlaç Alerjisi",
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(5688),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(5541),
                             Description = "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",
                             IsDeleted = false
                         });
@@ -83,6 +83,10 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("DietPlanName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("DietitianId")
                         .HasColumnType("integer");
 
@@ -100,6 +104,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -116,13 +123,15 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CaloriesPerDay = 200,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(8251),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(8168),
                             Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
+                            DietPlanName = "Kilo Verme Programı",
                             DietitianId = 1,
                             EndDate = "2025-06-10",
                             IsDeleted = false,
                             PatientId = 1,
-                            StartDate = "2024-11-11"
+                            StartDate = "2024-11-11",
+                            Status = true
                         });
                 });
 
@@ -146,8 +155,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("MealId")
                         .HasColumnType("integer");
 
-                    b.Property<float>("ServingSize")
-                        .HasColumnType("real");
+                    b.Property<int>("ServingSize")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -164,11 +173,11 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(8755),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(8711),
                             DietPlanId = 1,
                             IsDeleted = false,
                             MealId = 1,
-                            ServingSize = 2f
+                            ServingSize = 2
                         });
                 });
 
@@ -182,6 +191,12 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ExperienceYears")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
@@ -206,7 +221,9 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(6233),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(6285),
+                            ExperienceYears = 1,
+                            IsActive = true,
                             IsDeleted = false,
                             Specialization = "Diyabet Diyetisyeni",
                             UserId = 1
@@ -253,7 +270,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(6690),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(6835),
                             DietPlanId = 1,
                             DietitianId = 1,
                             IsDeleted = false,
@@ -310,7 +327,7 @@ namespace Infrastructure.Migrations
                             BloodPressure = 120m,
                             BloodSugar = 150m,
                             Cholesterol = 239m,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9191),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(9224),
                             HeartRate = 90m,
                             IsDeleted = false,
                             PatientId = 1,
@@ -329,6 +346,10 @@ namespace Infrastructure.Migrations
                     b.Property<decimal>("Calory")
                         .HasColumnType("numeric");
 
+                    b.Property<string>("Carbonhydrate")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
@@ -336,6 +357,10 @@ namespace Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Fat")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -347,6 +372,10 @@ namespace Infrastructure.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Protein")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -364,12 +393,15 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             Calory = 99m,
+                            Carbonhydrate = "10 g",
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9979),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(198),
                             Description = "Tiroit hastaları için deniz yemeği",
+                            Fat = "20 g",
                             Image = "1.jpg",
                             IsDeleted = false,
-                            MealName = "Karides"
+                            MealName = "Karides",
+                            Protein = "50 g"
                         });
                 });
 
@@ -407,7 +439,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CategoryName = "Deniz Yemekleri",
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 165, DateTimeKind.Utc).AddTicks(9605),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 905, DateTimeKind.Utc).AddTicks(9726),
                             Description = "b12 ve demir eksikliği olanlar için",
                             IsDeleted = false
                         });
@@ -421,11 +453,12 @@ namespace Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CookingTime")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("DietPlanId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Ingredients")
                         .IsRequired()
@@ -441,12 +474,14 @@ namespace Infrastructure.Migrations
                     b.Property<int>("MealId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("PreparationTime")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DietPlanId");
 
                     b.HasIndex("MealId");
 
@@ -456,12 +491,13 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(356),
-                            DietPlanId = 1,
+                            CookingTime = "20 dakika",
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(695),
                             Ingredients = "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu",
                             Instructions = "Yemeği Yapma Adımları",
                             IsDeleted = false,
-                            MealId = 1
+                            MealId = 1,
+                            PreparationTime = "30 dakika"
                         });
                 });
 
@@ -509,7 +545,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1176),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(1728),
                             Height = 178f,
                             IsDeleted = false,
                             MedicalConditions = "Tiroid Hastalığı",
@@ -563,7 +599,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyId = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(775),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(1192),
                             IsDeleted = false,
                             PatientId = 1,
                             ReactionDescription = "Ansiyete ve sinirlilik hali",
@@ -600,21 +636,21 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1597),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2190),
                             IsDeleted = false,
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1601),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2195),
                             IsDeleted = false,
                             RoleName = "Dietitian"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(1605),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2199),
                             IsDeleted = false,
                             RoleName = "Patient"
                         });
@@ -630,10 +666,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<int>("Age")
                         .HasColumnType("integer");
-
-                    b.Property<string>("BirthDate")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -686,8 +718,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             Age = 22,
-                            BirthDate = "2002-09-17",
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(2041),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2812),
                             Email = "barisceylan907@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -702,8 +733,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 2,
                             Age = 21,
-                            BirthDate = "2004-10-12",
-                            CreatedAt = new DateTime(2024, 10, 1, 19, 57, 58, 166, DateTimeKind.Utc).AddTicks(2047),
+                            CreatedAt = new DateTime(2024, 10, 2, 21, 24, 49, 906, DateTimeKind.Utc).AddTicks(2817),
                             Email = "hakantemiz@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -816,19 +846,11 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Infrastructure.Data.Postgres.Entities.MealRecipe", b =>
                 {
-                    b.HasOne("Infrastructure.Data.Postgres.Entities.DietPlan", "DietPlan")
-                        .WithMany()
-                        .HasForeignKey("DietPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Infrastructure.Data.Postgres.Entities.Meal", "Meal")
                         .WithMany()
                         .HasForeignKey("MealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("DietPlan");
 
                     b.Navigation("Meal");
                 });

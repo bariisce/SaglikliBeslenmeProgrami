@@ -10,6 +10,6 @@ namespace Business.Models.Request.Create
     {
         public int DietPlanId { get; set; } = default!;
         public int MealId { get; set; } = default!;
-        public float ServingSize { get; set; } = default!;
+        public int ServingSize { get; set; } = default!;
     }
 }

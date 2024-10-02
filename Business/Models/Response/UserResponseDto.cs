@@ -17,7 +17,6 @@ namespace Business.Models.Response
         public string PhoneNumber { get; set; } = default!;
         public string Username { get; set; } = default!;
         public string Password { get; set; } = default!;
-        public string BirthDate { get; set; } = default!;
         public string Gender { get; set; } = default!;
         public int Age { get; set; } = default!;
     }

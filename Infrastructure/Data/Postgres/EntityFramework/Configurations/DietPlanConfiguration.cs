@@ -22,9 +22,12 @@ namespace Infrastructure.Data.Postgres.EntityFramework.Configurations
                     Id = 1,
                     DietitianId = 1,
                     PatientId = 1,
-                    StartDate = "2024-11-11", EndDate = "2025-06-10",
+                    DietPlanName="Kilo Verme Programı",
+                    StartDate = "2024-11-11", 
+                    EndDate = "2025-06-10",
                     CaloriesPerDay = 200,
                     Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
+                    Status = true,
                     CreatedAt = DateTime.UtcNow.ToTimeZone(), IsDeleted = false
                 }
             };
