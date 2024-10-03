@@ -14,7 +14,7 @@ namespace Business.Models.Request.Update
         public string StartDate { get; set; } = default!;
         public string EndDate { get; set; } = default!;
         public int CaloriesPerDay { get; set; } = default!;
-        public Boolean Status { get; set; } = true;
+        public bool Status { get; set; } = true;
         public string Details { get; set; } = default!;
     }
 }

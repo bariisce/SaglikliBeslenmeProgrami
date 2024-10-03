@@ -12,7 +12,7 @@ namespace Infrastructure.Data.Postgres.Entities
         public int UserId { get; set; }             = default!;
         public string Specialization { get; set; } = default!;
         public int ExperienceYears { get; set; } = default!;
-        public Boolean IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = true;
 
         public User Users { get; set; } = default!;
         public ICollection<DietitianPatient> DietitianPatients { get; set; } = default!;
