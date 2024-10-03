@@ -56,7 +56,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyName = "İlaç Alerjisi",
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 800, DateTimeKind.Utc).AddTicks(8378),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 73, DateTimeKind.Utc).AddTicks(7661),
                             Description = "Kaşıntı, Kurdeşen, Döküntü, Yüzün Şişmesi",
                             IsDeleted = false
                         });
@@ -120,7 +120,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CaloriesPerDay = 200,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(1036),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 73, DateTimeKind.Utc).AddTicks(9575),
                             Details = "Tiroit hastalığından dolayı alman gereken kalori miktarına dikkat etmelisin !",
                             DietPlanName = "Kilo Verme Programı",
                             DietitianId = 1,
@@ -170,7 +170,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(1477),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(455),
                             DietPlanId = 1,
                             IsDeleted = false,
                             MealId = 1,
@@ -218,7 +218,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 800, DateTimeKind.Utc).AddTicks(8996),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 73, DateTimeKind.Utc).AddTicks(8358),
                             ExperienceYears = 1,
                             IsActive = true,
                             IsDeleted = false,
@@ -267,7 +267,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 800, DateTimeKind.Utc).AddTicks(9392),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 73, DateTimeKind.Utc).AddTicks(8896),
                             DietPlanId = 1,
                             DietitianId = 1,
                             IsDeleted = false,
@@ -324,7 +324,7 @@ namespace Infrastructure.Migrations
                             BloodPressure = 120m,
                             BloodSugar = 150m,
                             Cholesterol = 239m,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(1876),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(1073),
                             HeartRate = 90m,
                             IsDeleted = false,
                             PatientId = 1,
@@ -392,7 +392,7 @@ namespace Infrastructure.Migrations
                             Calory = 99m,
                             Carbonhydrate = "10 g",
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(2688),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(2100),
                             Description = "Tiroit hastaları için deniz yemeği",
                             Fat = "20 g",
                             Image = "1.jpg",
@@ -436,7 +436,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CategoryName = "Deniz Yemekleri",
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(2268),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(1616),
                             Description = "b12 ve demir eksikliği olanlar için",
                             IsDeleted = false
                         });
@@ -489,7 +489,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             CookingTime = "20 dakika",
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(3161),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(2567),
                             Ingredients = "Yarım kilo temizlenmiş ve dondurulmuş karides, 3 diş sarımsak, 6 yemek kaşığı zeytinyağı, 1 çay kaşığı pul biber, 1 çay kaşığı toz kırmızı biber (olmasa da olur), 1 çay kaşığından az karabiber, 1 çay kaşığı tuz, 3 yemek kaşığı limon suyu",
                             Instructions = "Yemeği Yapma Adımları",
                             IsDeleted = false,
@@ -542,7 +542,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(3998),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(3549),
                             Height = 178f,
                             IsDeleted = false,
                             MedicalConditions = "Tiroid Hastalığı",
@@ -596,7 +596,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             AllergyId = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(3556),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(3083),
                             IsDeleted = false,
                             PatientId = 1,
                             ReactionDescription = "Ansiyete ve sinirlilik hali",
@@ -633,21 +633,21 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(4374),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(4099),
                             IsDeleted = false,
                             RoleName = "Admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(4378),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(4105),
                             IsDeleted = false,
                             RoleName = "Dietitian"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(4382),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(4110),
                             IsDeleted = false,
                             RoleName = "Patient"
                         });
@@ -715,7 +715,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 1,
                             Age = 22,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(4827),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(5375),
                             Email = "barisceylan907@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,
@@ -730,7 +730,7 @@ namespace Infrastructure.Migrations
                         {
                             Id = 2,
                             Age = 21,
-                            CreatedAt = new DateTime(2024, 10, 2, 22, 13, 1, 801, DateTimeKind.Utc).AddTicks(4832),
+                            CreatedAt = new DateTime(2024, 10, 3, 11, 15, 2, 74, DateTimeKind.Utc).AddTicks(5383),
                             Email = "hakantemiz@gmail.com",
                             Gender = "Erkek",
                             IsDeleted = false,

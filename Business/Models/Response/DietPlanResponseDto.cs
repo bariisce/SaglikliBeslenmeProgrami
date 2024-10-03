@@ -15,7 +15,7 @@ namespace Business.Models.Response
         public string EndDate { get; set; } = default!;
         public string DietPlanName { get; set; } = default!;
         public int CaloriesPerDay { get; set; } = default!;
-        public Boolean Status { get; set; } = true;
+        public bool Status { get; set; } = true;
         public string Details { get; set; } = default!;
     }
 }
