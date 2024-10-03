@@ -8,7 +8,7 @@ namespace Business.Models.Response
 {
     public class UserResponseDto
     {
-        public RoleResponseDto RoleResponseDto { get; set; } = default!;
+        public RoleResponseDto GetRole { get; set; } = default!;
 
         public int Id { get; set; } = default!;
         public string Name { get; set; } = default!;

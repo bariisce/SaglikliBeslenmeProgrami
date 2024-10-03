@@ -13,8 +13,8 @@ namespace Business.Models.Request.Create
         public string Description { get; set; } = default!;
         public decimal Calory { get; set; } = default!;
         public string Image { get; set; } = default!;
-        public double Protein { get; set; } = default!;
-        public double Carbonhydrate { get; set; } = default!;
-        public double Fat { get; set; } = default!;
+        public string Protein { get; set; } = default!;
+        public string Carbonhydrate { get; set; } = default!;
+        public string Fat { get; set; } = default!;
     }
 }

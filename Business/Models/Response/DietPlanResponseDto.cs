@@ -8,8 +8,8 @@ namespace Business.Models.Response
 {
     public class DietPlanResponseDto
     {
-        public DietitianResponseDto DietitianResponseDto { get; set; } = default!;
-        public PatientResponseDto PatientResponseDto { get; set; } = default!;
+        public DietitianResponseDto GetDietitian { get; set; } = default!;
+        public PatientResponseDto GetPatient { get; set; } = default!;
         public int Id { get; set; } = default!;
         public string StartDate { get; set; } = default!;
         public string EndDate { get; set; } = default!;

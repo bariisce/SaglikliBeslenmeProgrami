@@ -8,7 +8,7 @@ namespace Business.Models.Response
 {
     public class HealthRecordResponseDto
     {
-        public PatientResponseDto PatientResponseDto { get; set; } = default!;
+        public PatientResponseDto GetPatient { get; set; } = default!;
         public int Id { get; set; } = default!;
         public decimal BloodPressure { get; set; } = default!;
         public decimal HeartRate { get; set; } = default!;

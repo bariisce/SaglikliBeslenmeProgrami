@@ -8,8 +8,8 @@ namespace Business.Models.Response
 {
     public class PatientAllergyResponseDto
     {
-        public PatientResponseDto PatientResponseDto { get; set; } = default!;
-        public AllergyResponseDto AllergyResponseDto { get; set; } = default!;
+        public PatientResponseDto GetPatient { get; set; } = default!;
+        public AllergyResponseDto GetAllergy { get; set; } = default!;
         public int Id { get; set; } = default!;
         public string Severity { get; set; } = default!;
         public string ReactionDescription { get; set; } = default!;
