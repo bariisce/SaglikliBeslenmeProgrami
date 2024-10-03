@@ -8,6 +8,7 @@ namespace Business.Models.Response
 {
     public class RoleResponseDto
     {
+        public int Id { get; set; } = default!;
         public string RoleName { get; set; } = default!;
     }
 }

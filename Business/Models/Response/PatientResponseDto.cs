@@ -8,7 +8,7 @@ namespace Business.Models.Response
 {
     public class PatientResponseDto
     {
-        public UserResponseDto UserResponseDto { get; set; } = default!;
+        public UserResponseDto GetUser { get; set; } = default!;
         public int Id { get; set; } = default!;
         public float Weight { get; set; } = default!;
         public float Height { get; set; } = default!;

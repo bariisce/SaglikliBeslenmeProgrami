@@ -8,7 +8,7 @@ namespace Business.Models.Response
 {
     public class MealRecipeResponseDto
     {
-        public MealResponseDto MealResponseDto { get; set; } = default!;
+        public MealResponseDto GetMeal { get; set; } = default!;
         public int Id { get; set; } = default!;
         public string Ingredients { get; set; } = default!;
         public string Instructions { get; set; } = default!;
